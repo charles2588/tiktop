@@ -332,17 +332,19 @@
 
 		img_elements = $("#funny").find("div.card").find("img")
 		img_elements.each(function( index ) {
-  			console.log( index + ": " + $( this ).attr('src','https://foodimentaryguy.files.wordpress.com/2019/01/granola-bar-foodimentary.jpeg') );
+  			//console.log( index + ": " + $( this ).attr('src','https://foodimentaryguy.files.wordpress.com/2019/01/granola-bar-foodimentary.jpeg') );
 		});
 
 
 		$.ajax(funny).done(function (response) {
 		  img_elements = $("#funny").find("div.card").find("img")
-		  //console.log(response);
+		  console.log(response);
 		  i = 0
 		  response.forEach(element => {
 		  	//img_elements[i].src = 'https://tictop.herokuapp.com/img/' + element.img
-		  	img_elements[i].src = element.src
+		  	//img_elements[i].src = element.src
+		  	img_elements[i].attr('src','https://foodimentaryguy.files.wordpress.com/2019/01/granola-bar-foodimentary.jpeg') 
+		  	console.log(element);
 		  	i += 1;
 		  });
 		});
