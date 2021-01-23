@@ -341,7 +341,8 @@
 		  //console.log(response);
 		  i = 0
 		  response.forEach(element => {
-		  	img_elements[i].src = 'https://tictop.herokuapp.com/img/' + element.img
+		  	//img_elements[i].src = 'https://tictop.herokuapp.com/img/' + element.img
+		  	img_elements[i].src = element.src
 		  	i += 1;
 		  });
 		});
