@@ -333,12 +333,8 @@
 		  "timeout": 0,
 		};
 
-		img_elements = $("#funny").find("div.card").find("img")
-		img_elements.each(function( index ) {
-  			//console.log( index + ": " + $( this ).attr('src','https://foodimentaryguy.files.wordpress.com/2019/01/granola-bar-foodimentary.jpeg') );
-		});
-
-
+		//jquery XHR returns promise object that gives .done (which is resolve) .fail(which is reject)
+		//https://codeburst.io/javascript-promises-explained-with-simple-real-life-analogies-dd6908092138
 		$.ajax(funny).done(function (response) {
 		  img_elements = $("#funny").find("div.card").find("img")
 		  console.log(response);
@@ -350,6 +346,8 @@
 		  	console.log(element);
 		  	i += 1;
 		  });
+		}).fail(function(response){
+			console.log("Failed to get any response from endpoint " + response.status);
 		});
 		
 </script>>
